@@ -23,3 +23,6 @@ threadsafe: true
 handlers:
 - url: /.*
   script: helloworld.application
+
+- url: /other
+  script: helloworld.application

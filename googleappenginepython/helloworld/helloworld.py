@@ -13,8 +13,15 @@ class MainPage(webapp2.RequestHandler):
 		self.response.headers['Content-Type'] = 'text/plain'
 		self.response.write('Hello, World!')
 
+class OtherPage(webapp2.RequestHandler):
 
+	def get(self):
+		self.response.write('This is the other page. This page has no HTTP header.')
 
 application = webapp2.WSGIApplication([
+
 	('/', MainPage),
+	('/other', OtherPage)
+
+
 ], debug=True)
