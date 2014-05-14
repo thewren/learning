@@ -4,12 +4,22 @@
 # Google's YAML reference for Google App Engine: https://developers.google.com/appengine/docs/python/config/appconfig
 #
 
-application: your-app-id			# A unique identifier for the application on Google App Engine
-version: 1							# Code version; if this number is adjusted before uploading, GAE will retain the older version and allow me to roll back to it using the administrative console
-runtime: python27					# This application runs on the python27 environment, API version 1; this is the only configuration supported by GAE at the moment
-api_version: 1
-threadsafe: true					# This application is threadsafe, which means a single instance can handle several simultaneous requests
+# A unique identifier for the application on Google App Engine
+application: your-app-id
 
-handlers:							# Specify a list of URL patterns and descriptions of how they should be handled
-- url: /.*							
-script: helloworld.application
+# Code version; if this number is adjusted before uploading, GAE will retain the older version and allow me to roll back to it using the administrative console
+version: 1
+
+# This application runs on the python27 environment, API version 1; this is the only configuration supported by GAE at the moment
+runtime: python27
+api_version: 1
+
+# This application is threadsafe, which means a single instance can handle several simultaneous requests
+threadsafe: true
+
+
+
+# Specify a list of URL patterns and descriptions of how they should be handled
+handlers:
+- url: /.*
+  script: helloworld.application
