@@ -5,7 +5,8 @@
 #
 
 # A unique identifier for the application on Google App Engine
-application: your-app-id
+# hip-ether-283 is the test ID I'm using for this practice application.
+application: hip-ether-283
 
 # Code version; if this number is adjusted before uploading, GAE will retain the older version and allow me to roll back to it using the administrative console
 version: 1
