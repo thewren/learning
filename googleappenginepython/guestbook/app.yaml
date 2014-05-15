@@ -20,7 +20,11 @@ threadsafe: true
 
 
 # Specify a list of URL patterns and descriptions of how they should be handled
+# URL handler path patterns are tested in the order listed - so /stylesheets is checked before /.*
 handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
 - url: /.*
   script: guestbook.application
 
@@ -29,4 +33,6 @@ handlers:
 # Declare library dependencies
 libraries:
 - name: webapp2
+  version: latest
+- name: jinja2
   version: latest
