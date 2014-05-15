@@ -1,0 +1,32 @@
+#
+# Official YAML website: http://www.yaml.org/
+#
+# Google's YAML reference for Google App Engine: https://developers.google.com/appengine/docs/python/config/appconfig
+#
+
+# A unique identifier for the application on Google App Engine
+application: your-app-id
+
+# Code version; if this number is adjusted before uploading, GAE will retain the older version and allow me to roll back to it using the administrative console
+version: 1
+
+# This application runs on the python27 environment, API version 1; this is the only configuration supported by GAE at the moment
+runtime: python27
+api_version: 1
+
+# This application is threadsafe, which means a single instance can handle several simultaneous requests
+threadsafe: true
+
+
+
+# Specify a list of URL patterns and descriptions of how they should be handled
+handlers:
+- url: /.*
+  script: guestbook.application
+
+
+
+# Declare library dependencies
+libraries:
+- name: webapp2
+  version: latest

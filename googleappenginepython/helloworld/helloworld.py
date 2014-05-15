@@ -1,3 +1,6 @@
+#
+# Completed steps of helloworld.py - continue in the guestbook/ directory.
+#
 """A simple weapp2 server"""
 
 import webapp2
