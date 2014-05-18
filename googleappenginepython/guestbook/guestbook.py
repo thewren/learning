@@ -3,7 +3,7 @@
 #
 
 
-
+import cgi
 import os
 import urllib
 
@@ -109,8 +109,8 @@ class Guestbook(webapp2.RequestHandler):
         # is in the same entity group. Queries across the single entity group
         # will be consistent. However, the write rate to a single entity group
         # should be limited to ~1/second.
-        guestbook_name = self.request.get('guestbook_name',
-                                          DEFAULT_GUESTBOOK_NAME)
+        guestbook_name = 'test123'#self.request.get('guestbook_name',
+                                          #DEFAULT_GUESTBOOK_NAME)
         greeting = Greeting(parent=guestbook_key(guestbook_name))
 
         if users.get_current_user():
