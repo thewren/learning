@@ -10,8 +10,8 @@
         <b>{{ greeting.author.nickname() }}</b> wrote:
       {% else %}
        An anonymous person wrote:
-      <blockquote>{{ greeting.content }}</blockquote>
       {% endif %}
+      <blockquote>{{ greeting.content }}</blockquote>
     {% endfor %}
 
     <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
