@@ -1,5 +1,5 @@
 #
-# Resume at https://developers.google.com/appengine/docs/python/gettingstartedpython27/templates
+# An exercise in learning!
 #
 
 
