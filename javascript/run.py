@@ -21,12 +21,23 @@ class Home(webapp2.RequestHandler):
 
 
 
+class Mozilla(webapp2.RequestHandler):
+
+	def get(self):
+
+
+
+		template = config.JINJA_ENVIRONMENT.get_template('templates/mozilla.html')
+		return self.response.write(template.render())
+
+
 #
 # Run the application
 #
 
 application = webapp2.WSGIApplication([
 
-	('/', Home)
+	('/', Home),
+	('/mozilla', Mozilla)
 
 ])
