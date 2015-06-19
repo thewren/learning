@@ -1,0 +1,22 @@
+html {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.navcol {
+  width: 5%;
+  height: 500px;
+  background-color: #094415;
+  float: left;
+}
+
+.maincontent {
+  width: 95%;
+  height: 500px;
+  background-color: #094445;
+  float: left;
+}

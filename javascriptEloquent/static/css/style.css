@@ -1,0 +1,16 @@
+html {
+  font-size: 23px;
+  color: white;
+}
+
+body {
+  margin: 0;
+}
+
+.containsall {
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #147553;
+}
