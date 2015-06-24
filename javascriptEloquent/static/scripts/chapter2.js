@@ -44,3 +44,63 @@ else
 // While and Do Loops
 // http://eloquentjavascript.net/02_program_structure.html#h_FaGGgUI+MM
 
+/*
+var number = 0;
+while (number <= 12) {
+	console.log(number);
+	number = number + 2;
+}
+
+console.log("=|=|=|=|=|=")
+
+var result = 1;
+var counter = 0;
+while (counter < 10) {
+	result = result * 2;
+	counter = counter +1;
+}
+console.log(result);
+*/
+
+/*
+do {
+	var name = prompt("Who are you?");
+} while (!name);
+console.log(name);
+*/
+
+/*
+for(var number = 0; number <= 12; number = number +2) {
+	console.log(number);
+}
+*/
+
+/*
+for(var current = 100; ; current++) {
+	if(current % 7 == 0) { // If the remainder of 'current' divided by 7 is 0
+		break;
+	}
+}
+console.log(current);
+*/
+
+// EXERCISES
+
+// Looping a Triangle
+// http://eloquentjavascript.net/02_program_structure.html#h_umoXp9u0e7
+
+var count = 0;
+var block = '';
+while(count <= 6) {
+	
+	if(count <= block.length) {
+		block = block + "#";
+		console.log(block);
+	}
+	count++;
+}
+
+
+
+
+
