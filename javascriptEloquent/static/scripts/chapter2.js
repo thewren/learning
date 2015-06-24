@@ -89,6 +89,7 @@ console.log(current);
 // Looping a Triangle
 // http://eloquentjavascript.net/02_program_structure.html#h_umoXp9u0e7
 
+/*
 var count = 0;
 var block = '';
 while(count <= 6) {
@@ -98,6 +99,27 @@ while(count <= 6) {
 		console.log(block);
 	}
 	count++;
+}
+*/
+
+// FizzBuzz
+// http://eloquentjavascript.net/02_program_structure.html#h_rebKE3gdjV
+
+var count = 0;
+while(count <= 99) {
+	count++;
+	if(count % 3 == 0 && count % 5 !== 0) {
+		console.log('Fizz');
+	}
+	else if(count % 5 == 0 && count % 3 !== 0) {
+		console.log('Buzz');
+	}
+	else if(count % 3 == 0 && count % 5 == 0) {
+		console.log('FizzBuzz');
+	}
+	else {
+		console.log(count);	
+	}
 }
 
 
