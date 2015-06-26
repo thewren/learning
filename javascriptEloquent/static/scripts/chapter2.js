@@ -105,6 +105,7 @@ while(count <= 6) {
 // FizzBuzz
 // http://eloquentjavascript.net/02_program_structure.html#h_rebKE3gdjV
 
+/*
 var count = 0;
 while(count <= 99) {
 	count++;
@@ -121,6 +122,31 @@ while(count <= 99) {
 		console.log(count);	
 	}
 }
+*/
+
+// Chessboard
+// http://eloquentjavascript.net/02_program_structure.html#h_5Hz2kiaaXp
+
+var gridSize = Number(prompt("Specify the width and height as a whole number.")) - 1;
+
+for(var number = 0; number <= gridSize; number++) {
+	if(number % 2 == 0) {
+		var row = '';
+		while(row.length <= gridSize) {
+			row = row + ' #';
+		}
+		console.log(row);
+	}
+	else {
+		var row = '';
+		while(row.length <= gridSize) {
+			row = row + '# ';
+		}
+		console.log(row);
+	}
+}
+
+
 
 
 
