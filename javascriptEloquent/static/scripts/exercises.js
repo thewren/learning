@@ -1962,7 +1962,24 @@ http://eloquentjavascript.net/13_dom.html
 
 
 
+  var wheel = document.querySelector("img");
+  var wave = document.querySelectorAll("img")[1];
 
+  var angle = 0, lastTime = null, time = Date.now();
+  function animate(time) {
+
+    if(lastTime != null) 
+      angle += (time - lastTime) * 0.001;
+    lastTime = time;
+    wheel.style.top = 200 + (Math.sin(angle) * 100) + "px";
+    wheel.style.left = 200 + (Math.cos(angle) * 100) + "px";
+    //wave.style.top = parseInt(wheel.style.top) - (Math.sin(-angle * 10) * 100) + "px";
+    //wave.style.left = parseInt(wheel.style.left) - (Math.cos(-angle * 10) * 100) + "px";
+    wave.style.top = 200 - (Math.sin(angle) * 100) + "px";
+    wave.style.left = 200 - (Math.cos(angle) * 100) + "px";
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
 
 
 
