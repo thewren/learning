@@ -11,6 +11,13 @@
     <!-- style -->
     <link href="static/css/style.css" rel="stylesheet" type="text/css">
 
+    <style>
+      strong {
+        font-style: italic;
+        color: gray;
+      }
+    </style>
+
 
   </head>
 
@@ -20,11 +27,28 @@
       
       containsall
 
+      <p>
+        This text is displayed <strong>inline</strong>,
+        <strong style="display:block">as a block</strong>, and
+        <strong style="display:none">not at all</strong>.
+      </p>
+
+      <p id="para" style = "color:purple">
+        Pretty text
+      </p>
+
+      <div style="text-align: center">
+        <a href="https://www.google.com/">
+          <img src="static/images/wheel_300x300.gif" style="position: absolute; width: 50px; height: 50px;" />
+        </a>
+        <img src="static/images/waves_400x400.gif" style="position: absolute; width: 50px; height: 50px; border: 2px solid black;" />
+      </div>
+
     </div>
 
 <!-- scripts -->
-<script src="static/scripts/exercises.js"/></script>  
+<script src="static/scripts/exercises.js"/></script> 
 
-  </body>
+</body>
 
 </html>
