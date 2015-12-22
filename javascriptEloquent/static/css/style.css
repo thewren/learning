@@ -8,9 +8,19 @@ body {
 }
 
 .containsall {
-  width: 100%;
+
   top: 0;
   bottom: 0;
   position: absolute;
   background-color: #147553;
+}
+
+.test {
+
+  border: 1px solid red;
+}
+
+#column {
+  border: 1px solid purple;
+
 }

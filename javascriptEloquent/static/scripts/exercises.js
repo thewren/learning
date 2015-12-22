@@ -93,7 +93,7 @@ console.log(current);
 var count = 0;
 var block = '';
 while(count <= 6) {
-	
+
 	if(count <= block.length) {
 		block = block + "#";
 		console.log(block);
@@ -119,7 +119,7 @@ while(count <= 99) {
 		console.log('FizzBuzz');
 	}
 	else {
-		console.log(count);	
+		console.log(count);
 	}
 }
 */
@@ -504,8 +504,8 @@ function range(start, end, step) {
 		for(var i = start; i > end - 1; i = i + step) {
 			array.push(i);
 		}
-	} 
-	
+	}
+
 	return array;
 }
 
@@ -591,11 +591,11 @@ function listToArray(list) {
 
 	var array = [];
 
-	
+
 	for(var node = list; node; node = node.rest) {
 		array.push(node.value);
 	};
-	
+
 
 	return array;
 };
@@ -632,7 +632,7 @@ function nth(position, list) {
 /*
 function deepEqual(value1, value2) {
 	if(typeof value1 == typeof value2 && typeof value1 == 'object' && value1 != null && value2 != null) {
-		
+
 		// Check to see if value1 and value2 are equal to one another
 		if(value1 == value2) {
 			return true;
@@ -879,7 +879,7 @@ function averageAgeByCentury(array) {
 			holdArray[person.deathCentury] = [person.ageAtDeath];
 		}
 	});
-	
+
 	for(item in holdArray) {
 		holdArray[item] = average(holdArray[item]);
 	}
@@ -1968,8 +1968,8 @@ http://eloquentjavascript.net/13_dom.html
   var angle = 0, lastTime = null, time = Date.now();
   function animate(time) {
 
-    if(lastTime != null) 
-      angle += (time - lastTime) * 0.001;
+    if(lastTime != null)
+      angle += (time - lastTime) * 0.005;
     lastTime = time;
     wheel.style.top = 200 + (Math.sin(angle) * 100) + "px";
     wheel.style.left = 200 + (Math.cos(angle) * 100) + "px";
@@ -1981,39 +1981,42 @@ http://eloquentjavascript.net/13_dom.html
   }
   requestAnimationFrame(animate);
 
+var test = document.getElementsByClassName("test");
+var column = document.getElementById("column");
+
+//column.setAttribute("height", window.innerHeight + "px");
+
+function printPattern(func, pattern) {
+
+	var counter = 0;
+
+	while(func.offsetWidth < (window.innerWidth * 0.9)) {
+
+	func.appendChild(document.createTextNode(pattern));
+	counter += 1;
+	}
+}
 
 
 
+printPattern(test[0], "|_||_|__");
+printPattern(test[0], "_|__|_||");
+
+while(column.offsetHeight < window.innerHeight) {
+	column.appendChild(document.createElement("div").setAttribute("class", "test"));
+}
+
+
+//while(column.offsetHeight < window.innerHeight * 0.9) {
+	//column.appendChild(document.createElement("div").setAtt)
+//}
 
 
 
+//|_||_|__|_||_|__|_||_|__|_||_|__|_|
+//_|__|_||_|__|_||_|__|_||_|__|_||_|_
+//|_||_|__|_||_|__|_||_|__|_||_|__|_|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//for(var i = 0; i < (window.innerWidth * 0.9); i++) {
+//	test.appendChild(document.createTextNode("X"));
+//}
