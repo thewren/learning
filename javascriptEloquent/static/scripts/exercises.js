@@ -1981,31 +1981,56 @@ http://eloquentjavascript.net/13_dom.html
   }
   requestAnimationFrame(animate);
 
-var test = document.getElementsByClassName("test");
+
 var column = document.getElementById("column");
 
-//column.setAttribute("height", window.innerHeight + "px");
 
-function printPattern(func, pattern) {
 
+function printPattern(ele, pattern) {
 	var counter = 0;
-
-	while(func.offsetWidth < (window.innerWidth * 0.9)) {
-
-	func.appendChild(document.createTextNode(pattern));
-	counter += 1;
+	var patternHolder = document.createElement("p");
+	while(ele.offsetWidth < (window.innerWidth * 0.9)) {
+		console.log(counter);
+		//ele.appendChild(document.createElement("p").appendChild(document.createTextNode(pattern)));
+		//ele.appendChild(patternHolder.appendChild(document.createTextNode(pattern)));
+		patternHolder.appendChild(document.createTextNode(pattern));
+		//ele.appendChild(patternHolder);
+		counter += 1;
+		if(counter > window.innerWidth) {
+			break;
+		}
 	}
+	ele.appendChild(patternHolder);
 }
 
 
 
-printPattern(test[0], "|_||_|__");
-printPattern(test[0], "_|__|_||");
+//printPattern(test[0], "|_||_|__");
+//printPattern(test[0], "_|__|_||");
+
+//printPattern(column, "|_||_|__");
+//printPattern(column, "_|__|_||");
+
+
+for(var i = 0; i < window.innerHeight; i++) {
+	printPattern(column, "|_||_|__")
+}
+
+/*
+var counter = 0;
 
 while(column.offsetHeight < window.innerHeight) {
-	column.appendChild(document.createElement("div").setAttribute("class", "test"));
+	//console.log(counter);
+	//column.appendChild(document.createElement("div")).setAttribute("class", "test");
+	//test = document.getElementsByClassName("test");
+	//console.log(test);
+	printPattern(column, "|_||_|__");
+	counter += 1;
+	if(counter > 1000) {
+		break;
+	}
 }
-
+*/
 
 //while(column.offsetHeight < window.innerHeight * 0.9) {
 	//column.appendChild(document.createElement("div").setAtt)
