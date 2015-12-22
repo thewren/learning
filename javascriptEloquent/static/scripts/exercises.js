@@ -1988,60 +1988,32 @@ var column = document.getElementById("column");
 
 function printPattern(ele, pattern) {
 	var counter = 0;
-	var patternHolder = document.createElement("p");
-	while(ele.offsetWidth < (window.innerWidth * 0.9)) {
-		console.log(counter);
-		//ele.appendChild(document.createElement("p").appendChild(document.createTextNode(pattern)));
-		//ele.appendChild(patternHolder.appendChild(document.createTextNode(pattern)));
+	var patternHolder = document.createElement("span");
+	ele.appendChild(patternHolder);
+
+	while(patternHolder.offsetWidth < (window.innerWidth * 0.9)) {
+
 		patternHolder.appendChild(document.createTextNode(pattern));
-		//ele.appendChild(patternHolder);
+
 		counter += 1;
 		if(counter > window.innerWidth) {
 			break;
 		}
 	}
-	ele.appendChild(patternHolder);
+	ele.appendChild(document.createElement("br"));
 }
 
 
 
-//printPattern(test[0], "|_||_|__");
-//printPattern(test[0], "_|__|_||");
-
-//printPattern(column, "|_||_|__");
-//printPattern(column, "_|__|_||");
-
-
-for(var i = 0; i < window.innerHeight; i++) {
-	printPattern(column, "|_||_|__")
-}
-
-/*
 var counter = 0;
-
-while(column.offsetHeight < window.innerHeight) {
-	//console.log(counter);
-	//column.appendChild(document.createElement("div")).setAttribute("class", "test");
-	//test = document.getElementsByClassName("test");
-	//console.log(test);
-	printPattern(column, "|_||_|__");
+while(column.offsetHeight < (window.innerHeight * 0.9)) {
+	if(counter % 2) {
+		printPattern(column, "_|__|_||")
+	} else {
+		printPattern(column, "|_||_|__");
+	}
 	counter += 1;
-	if(counter > 1000) {
+	if(counter > window.innerHeight) {
 		break;
 	}
 }
-*/
-
-//while(column.offsetHeight < window.innerHeight * 0.9) {
-	//column.appendChild(document.createElement("div").setAtt)
-//}
-
-
-
-//|_||_|__|_||_|__|_||_|__|_||_|__|_|
-//_|__|_||_|__|_||_|__|_||_|__|_||_|_
-//|_||_|__|_||_|__|_||_|__|_||_|__|_|
-
-//for(var i = 0; i < (window.innerWidth * 0.9); i++) {
-//	test.appendChild(document.createTextNode("X"));
-//}
