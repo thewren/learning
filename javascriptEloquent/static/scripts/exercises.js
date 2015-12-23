@@ -1961,7 +1961,7 @@ http://eloquentjavascript.net/13_dom.html
 
 
 
-
+/*
   var wheel = document.querySelector("img");
   var wave = document.querySelectorAll("img")[1];
 
@@ -2017,3 +2017,73 @@ while(column.offsetHeight < (window.innerHeight * 0.9)) {
 		break;
 	}
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Chapter 14 - THandling Events
+http://eloquentjavascript.net/14_event.html
+
+*/
+
+//// Censored Keyboard
+//// http://eloquentjavascript.net/14_event.html#h_Lhbs8f7VGD
+
+var help = document.getElementsByClassName("help")[0];
+var inputFields = document.querySelectorAll("input");
+var char;
+
+
+
+for(var i = 0; i <inputFields.length; i++) {
+	inputFields[i].addEventListener("keypress", function forbidQWX(event) {
+		char = String.fromCharCode(event.charCode).toLowerCase();
+		if(char == "q" || char == "w" || char == "x") {
+
+		}
+	}
+	);
+
+	inputFields[i].addEventListener("keyup", function removeQWX(event) {
+		if(char == "q" || char == "w" || char == "x") {
+			inputFields[0].value = inputFields[0].value.slice(0, -1);
+			help.textContent = "Q, W, and X are forbidden by law.";
+		} else {
+			help.textContent = "";
+		}
+	}
+	);
+}
+
+
+
+//// Mouse Trail
+//// http://eloquentjavascript.net/14_event.html#h_NOgRH0Y9st
