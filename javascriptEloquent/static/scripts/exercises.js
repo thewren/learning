@@ -2113,18 +2113,13 @@ function followMouse(event) {
 			trails[2].style.top = mousePosition[1] + "px";
 		}
 
-	/*
-	for(var i = 0; i < trails.length; i++) {
-		trails[i].style.left = mousePosition[0] + "px";
-		trails[i].style.top = mousePosition[1] + "px";
-	}
-	*/
 
 	return counter;
 
 }
 
-column.addEventListener("mousemove", followMouse);
 
-//trails[0].style.left = mousePosition[0] + "px";
-//trails[0].style.top = mousePosition[1] + "px";
+
+
+
+document.addEventListener("mousemove", followMouse);
