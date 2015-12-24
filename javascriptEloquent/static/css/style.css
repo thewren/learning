@@ -4,6 +4,7 @@ html {
 
 body {
   margin: 0;
+
 }
 
 .containsall {
@@ -23,6 +24,14 @@ body {
 
 p.help {
   color: red;
+}
+
+.trail {
+  position: absolute;
+  height: 7px;
+  width: 7px;
+  border-radius: 3px;
+  background: teal;
 }
 
 #column {

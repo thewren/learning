@@ -2057,6 +2057,8 @@ http://eloquentjavascript.net/14_event.html
 //// Censored Keyboard
 //// http://eloquentjavascript.net/14_event.html#h_Lhbs8f7VGD
 
+
+
 var help = document.getElementsByClassName("help")[0];
 var inputFields = document.querySelectorAll("input");
 var char;
@@ -2087,3 +2089,42 @@ for(var i = 0; i <inputFields.length; i++) {
 
 //// Mouse Trail
 //// http://eloquentjavascript.net/14_event.html#h_NOgRH0Y9st
+
+
+
+var counter = 0;
+var mousePosition = [0, 0];
+var trails = document.getElementsByClassName("trail");
+
+function followMouse(event) {
+
+	mousePosition = [event.pageX, event.pageY];
+
+	counter += 1;
+
+		if(counter % 5) {
+			trails[0].style.left = mousePosition[0] + "px";
+			trails[0].style.top = mousePosition[1] + "px";
+		} else if(counter % 10) {
+			trails[1].style.left = mousePosition[0] + "px";
+			trails[1].style.top = mousePosition[1] + "px";
+		} else if(counter % 15) {
+			trails[2].style.left = mousePosition[0] + "px";
+			trails[2].style.top = mousePosition[1] + "px";
+		}
+
+	/*
+	for(var i = 0; i < trails.length; i++) {
+		trails[i].style.left = mousePosition[0] + "px";
+		trails[i].style.top = mousePosition[1] + "px";
+	}
+	*/
+
+	return counter;
+
+}
+
+column.addEventListener("mousemove", followMouse);
+
+//trails[0].style.left = mousePosition[0] + "px";
+//trails[0].style.top = mousePosition[1] + "px";
