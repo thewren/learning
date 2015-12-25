@@ -93,7 +93,7 @@ console.log(current);
 var count = 0;
 var block = '';
 while(count <= 6) {
-	
+
 	if(count <= block.length) {
 		block = block + "#";
 		console.log(block);
@@ -119,7 +119,7 @@ while(count <= 99) {
 		console.log('FizzBuzz');
 	}
 	else {
-		console.log(count);	
+		console.log(count);
 	}
 }
 */
@@ -504,8 +504,8 @@ function range(start, end, step) {
 		for(var i = start; i > end - 1; i = i + step) {
 			array.push(i);
 		}
-	} 
-	
+	}
+
 	return array;
 }
 
@@ -591,11 +591,11 @@ function listToArray(list) {
 
 	var array = [];
 
-	
+
 	for(var node = list; node; node = node.rest) {
 		array.push(node.value);
 	};
-	
+
 
 	return array;
 };
@@ -632,7 +632,7 @@ function nth(position, list) {
 /*
 function deepEqual(value1, value2) {
 	if(typeof value1 == typeof value2 && typeof value1 == 'object' && value1 != null && value2 != null) {
-		
+
 		// Check to see if value1 and value2 are equal to one another
 		if(value1 == value2) {
 			return true;
@@ -879,7 +879,7 @@ function averageAgeByCentury(array) {
 			holdArray[person.deathCentury] = [person.ageAtDeath];
 		}
 	});
-	
+
 	for(item in holdArray) {
 		holdArray[item] = average(holdArray[item]);
 	}
@@ -1961,15 +1961,15 @@ http://eloquentjavascript.net/13_dom.html
 
 
 
-
+/*
   var wheel = document.querySelector("img");
   var wave = document.querySelectorAll("img")[1];
 
   var angle = 0, lastTime = null, time = Date.now();
   function animate(time) {
 
-    if(lastTime != null) 
-      angle += (time - lastTime) * 0.001;
+    if(lastTime != null)
+      angle += (time - lastTime) * 0.005;
     lastTime = time;
     wheel.style.top = 200 + (Math.sin(angle) * 100) + "px";
     wheel.style.left = 200 + (Math.cos(angle) * 100) + "px";
@@ -1982,6 +1982,149 @@ http://eloquentjavascript.net/13_dom.html
   requestAnimationFrame(animate);
 
 
+var column = document.getElementById("column");
+
+
+
+function printPattern(ele, pattern) {
+	var counter = 0;
+	var patternHolder = document.createElement("span");
+	ele.appendChild(patternHolder);
+
+	while(patternHolder.offsetWidth < (window.innerWidth * 0.9)) {
+
+		patternHolder.appendChild(document.createTextNode(pattern));
+
+		counter += 1;
+		if(counter > window.innerWidth) {
+			break;
+		}
+	}
+	ele.appendChild(document.createElement("br"));
+}
+
+
+
+var counter = 0;
+while(column.offsetHeight < (window.innerHeight * 0.9)) {
+	if(counter % 2) {
+		printPattern(column, "_|__|_||")
+	} else {
+		printPattern(column, "|_||_|__");
+	}
+	counter += 1;
+	if(counter > window.innerHeight) {
+		break;
+	}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Chapter 14 - THandling Events
+http://eloquentjavascript.net/14_event.html
+
+*/
+
+//// Censored Keyboard
+//// http://eloquentjavascript.net/14_event.html#h_Lhbs8f7VGD
+
+
+
+/*
+var help = document.getElementsByClassName("help")[0];
+var inputFields = document.querySelectorAll("input");
+var char;
+
+
+
+for(var i = 0; i <inputFields.length; i++) {
+	inputFields[i].addEventListener("keypress", function forbidQWX(event) {
+		char = String.fromCharCode(event.charCode).toLowerCase();
+		if(char == "q" || char == "w" || char == "x") {
+
+		}
+	}
+	);
+
+	inputFields[i].addEventListener("keyup", function removeQWX(event) {
+		if(char == "q" || char == "w" || char == "x") {
+			inputFields[0].value = inputFields[0].value.slice(0, -1);
+			help.textContent = "Q, W, and X are forbidden by law.";
+		} else {
+			help.textContent = "";
+		}
+	}
+	);
+}
+
+
+
+//// Mouse Trail
+//// http://eloquentjavascript.net/14_event.html#h_NOgRH0Y9st
+
+
+
+var counter = 0;
+var mousePosition = [0, 0];
+var trails = document.getElementsByClassName("trail");
+
+function followMouse(event) {
+
+	mousePosition = [event.pageX, event.pageY];
+
+	counter += 1;
+
+		if(counter % 5) {
+			trails[0].style.left = mousePosition[0] + "px";
+			trails[0].style.top = mousePosition[1] + "px";
+		} else if(counter % 10) {
+			trails[1].style.left = mousePosition[0] + "px";
+			trails[1].style.top = mousePosition[1] + "px";
+		} else if(counter % 15) {
+			trails[2].style.left = mousePosition[0] + "px";
+			trails[2].style.top = mousePosition[1] + "px";
+		}
+
+
+	return counter;
+
+}
+
+
+
+
+
+document.addEventListener("mousemove", followMouse);
+*/
 
 
 
@@ -2017,3 +2160,134 @@ http://eloquentjavascript.net/13_dom.html
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Chapter 15
+Project: A Platform Game
+http://eloquentjavascript.net/15_game.html
+
+*/
+
+
+
+var simpleLevelPlan = [
+	"                      ",
+  "                      ",
+  "  x              = x  ",
+  "  x         o o    x  ",
+  "  x @      xxxxx   x  ",
+  "  xxxxx            x  ",
+  "      x!!!!!!!!!!!!x  ",
+  "      xxxxxxxxxxxxxx  ",
+  "                      "
+];
+
+var actorChars = {
+	"@": Player,
+	"o": Coin,
+	"=": Lava, "|": Lava, "v": Lava
+};
+
+
+
+function Level(plan) {
+	this.width = plan[0].length;
+	this.height = plan.length;
+	this.grid = [];
+	this.actors = [];
+
+	for(var y = 0; y < this.height; y++) {
+		var line = plan[y];
+		var gridLine = [];
+
+		for(var x = 0; x < this.width; x++) {
+			var ch = line[x];
+			var filedType = null;
+			var Actor = actorChars[ch];
+				if(Actor) {
+					this.actors.push(new Actor(new Vector(x, y), ch));
+				} else if(ch == "x") {
+					fieldType = "wall";
+				} else if(ch == "!") {
+					fieldType = "lava";
+				}
+				gridLine.push(fieldType);
+		}
+		this.grid.push(gridLine);
+	}
+
+	this.player = this.actors.filter(function(actor) {
+		return actor.type == "player";
+	})[0];
+	this.status = this.finishDelay = null;
+
+	Level.prototype.isFinished = function() {
+		return this.status != null && this.finishDelay < 0;
+	};
+
+}
+
+
+
+
+
+function Vector(x, y) {
+	this.x = x;
+	this.y = y;
+
+	Vector.prototype.plus = function(other) {
+		return new Vector(this.x + other.x, this.y + other.y);
+	};
+
+	Vector.prototype.times = function(factor) {
+		return new Vector(this.x * factor, this.y * factor);
+	};
+}
+
+
+
+
+function Player(pos) {
+	this.pos = pos.plus(new Vector( 0, -0.5));
+	this.size = new Vector(0.8, 1.5);
+	this.speed = new Vector(0, 0);
+
+	Player.prototype.type = "player";
+}
+
+
+function Lava(pos, ch) {
+	this.pos = pos;
+	this.size = new Vector(1, 1);
+	if(ch == "=") {
+		this.speed = new Vector(2, 0);
+	} else if(ch == "|") {
+		this.speed = new Vector(0, 2);
+	} else if (ch == "v") {
+		this.speed = new Vector(0, 3);
+		this.repeatPos = pos;
+	}
+
+	Lava.prototype.type = "lava";
+}
+
+
+function Coin(pos) {
+	this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
+	this.size = new Vector(0.6, 0.6);
+	this.wobble = Math.random() * Math.PI * 2;
+
+	Coin.prototype.type = "coin";
+}
