@@ -2181,7 +2181,7 @@ http://eloquentjavascript.net/15_game.html
 */
 
 
-
+/*
 var simpleLevelPlan = [
 	"                      ",
   "                      ",
@@ -2616,3 +2616,61 @@ function runGame(plans, Display) {
 
 var simpleLevel = new Level(simpleLevelPlan);
 var display = new DOMDisplay(document.body, simpleLevel);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Chapter 16
+Drawing On Canvas
+http://eloquentjavascript.net/16_canvas.html
+
+*/
